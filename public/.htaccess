@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /barbershop/public/
+
+# Si el archivo o carpeta existe, servirlo directamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# De lo contrario, enviar todo a index.php
+RewriteRule ^ index.php [QSA,L]
